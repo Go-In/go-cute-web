@@ -10,7 +10,7 @@ export default (props) => (
       <div className="mt-3">
 
       </div>
-      <p class="blockquote-footer">{props.description}</p>
+      <p className="blockquote-footer">{props.description}</p>
     </div>
   </div>
 )

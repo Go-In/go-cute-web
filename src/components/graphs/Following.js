@@ -39,7 +39,11 @@ class App extends Component {
           >
             <LoadGEXF path={`${process.env.PUBLIC_URL}/following_small5.gefx`}>
               <RandomizeNodePositions>
-                <ForceLink iterationsPerRender={1} background={true} easing="cubicInOut" timeout={5000}/>
+                <ForceLink
+                  iterationsPerRender={1}
+                  easing="cubicInOut"
+                  timeout={10000}
+                />
                 <RelativeSize initialSize={15}/>
                 <Filter neighborsOf={ this.state.selectedNode } />
               </RandomizeNodePositions>

@@ -32,7 +32,7 @@ class App extends Component {
       <div className="App mt-3 mb-3">
         <div className="container">
 
-          <nav class=" mb-3 nav nav-pills nav-justified">
+          <nav className=" mb-3 nav nav-pills nav-justified">
             {
               menu.map((m, index) => (
                 <span
