@@ -2,31 +2,55 @@ import React, { Component } from 'react';
 import {
   Sigma,
   LoadGEXF,
+  LoadJSON,
   RandomizeNodePositions,
   RelativeSize,
+  Filter,
 } from 'react-sigma';
 import ForceLink from 'react-sigma/lib/ForceLink'
-import logo from './logo.svg';
+import Card from './components/Card';
+import Following from './components/graphs/Following';
 import './App.css';
 
+const menu = [
+  'Following',
+  'Like',
+  'Comment'
+]
+
 class App extends Component {
-  onOverNode = (e) => {
-    console.log("Mouse over node: " + e.data.node.label);
+  state = {
+    menu: 0,
+  }
+  onChangeMenu = (i) => () => {
+    this.setState({
+      menu: i,
+    })
   }
   render() {
     return (
-      <div className="App">
-        <div className="graph-wrapper">
-          <Sigma
-            onOverNode={this.onOverNode}
+      <div className="App mt-3 mb-3">
+        <div className="container">
+
+          <nav class=" mb-3 nav nav-pills nav-justified">
+            {
+              menu.map((m, index) => (
+                <span
+                  key={m}
+                  className={`nav-link ${index === this.state.menu && 'active'}`}
+                  onClick={this.onChangeMenu(index)}
+                >
+                  {m}
+                </span>
+              ))
+            }
+          </nav>
+          <Card
+            title="Following Relation"
+            description="dfsdfsdfsdf"
           >
-            <LoadGEXF path={`${process.env.PUBLIC_URL}/following_small.gefx`}>
-              <RandomizeNodePositions>
-                <ForceLink iterationsPerRender={1} background={true} easing="cubicInOut" timeout={5000}/>
-                <RelativeSize initialSize={15}/>
-              </RandomizeNodePositions>
-            </LoadGEXF>
-          </Sigma>
+            <Following />
+          </Card>
         </div>
       </div>
     );
