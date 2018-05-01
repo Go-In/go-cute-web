@@ -19,9 +19,6 @@ class App extends Component {
         <div className="graph-wrapper">
           <Sigma
             onOverNode={this.onOverNode}
-            style={{
-              height: '900px',
-            }}
           >
             <LoadGEXF path={`${process.env.PUBLIC_URL}/following_small.gefx`}>
               <RandomizeNodePositions>
