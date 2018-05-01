@@ -23,7 +23,7 @@ class App extends Component {
               height: '900px',
             }}
           >
-            <LoadGEXF path="/following_small.gefx">
+            <LoadGEXF path={`${process.env.PUBLIC_URL}/following_small.gefx`}>
               <RandomizeNodePositions>
                 <ForceLink iterationsPerRender={1} background={true} easing="cubicInOut" timeout={5000}/>
                 <RelativeSize initialSize={15}/>

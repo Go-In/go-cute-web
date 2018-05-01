@@ -1,16 +1,20 @@
 {
   "name": "graph-playground",
   "version": "0.1.0",
+  "homepage": "https://Go-In.github.io/go-cute-web",
   "private": true,
   "devDependencies": {
     "react-scripts": "1.1.4"
   },
   "dependencies": {
+    "gh-pages": "^1.1.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-sigma": "^1.2.30"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
