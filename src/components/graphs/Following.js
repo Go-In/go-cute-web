@@ -13,9 +13,6 @@ class App extends Component {
   state = {
     selectedNode: null,
   }
-  onOverNode = (e) => {
-    console.log("Mouse over node: " + e.data.node.label);
-  }
   onClickNode = (e) => {
     this.setState({
       selectedNode: e.data.node.id
@@ -31,13 +28,12 @@ class App extends Component {
       <div>
         <div className="graph-wrapper mb-3">
           <Sigma
-            onOverNode={this.onOverNode}
             onClickNode={this.onClickNode}
             style={{
               height: '600px',
             }}
           >
-            <LoadGEXF path={`${process.env.PUBLIC_URL}/following_small5.gefx`}>
+            <LoadGEXF path={`${process.env.PUBLIC_URL}/following_small6.gefx`}>
               <RandomizeNodePositions>
                 <ForceLink
                   iterationsPerRender={1}

@@ -10,6 +10,7 @@ import {
 import ForceLink from 'react-sigma/lib/ForceLink'
 import Card from './components/Card';
 import Following from './components/graphs/Following';
+import Comment from './components/graphs/Comment';
 import './App.css';
 
 const menu = [
@@ -49,7 +50,14 @@ class App extends Component {
             title="Following Relation"
             description="dfsdfsdfsdf"
           >
+          {
+            this.state.menu === 0 &&
             <Following />
+          }
+          {
+            this.state.menu === 2 &&
+            <Comment />
+          }
           </Card>
         </div>
       </div>
