@@ -15,7 +15,7 @@ import './App.css';
 
 const menu = [
   'Following',
-  'Like',
+  // 'Like',
   'Comment'
 ]
 
@@ -46,19 +46,24 @@ class App extends Component {
               ))
             }
           </nav>
-          <Card
-            title="Following Relation"
-            description="dfsdfsdfsdf"
-          >
           {
             this.state.menu === 0 &&
-            <Following />
+            <Card
+              title="Following Relation"
+              description = "ข้อมูล Network Graph แสดงถึมความสัมพันธ์ของ user ในกลุ่มที่เราสนใจ ว่ามีผู้ใด follow บ้าง โดยเราได้ตัด Node ที่มีน้ำหนักน้อยออกเพื่อให้แสดงผลได้ไเร็วขึ้น"
+            >
+              <Following />
+            </Card>
           }
           {
-            this.state.menu === 2 &&
-            <Comment />
+            this.state.menu === 1 &&
+            <Card
+              title="Comment Relation"
+              description = "ข้อมูล Network Graph แสดงถึงความสัมพันธ์ของ user ที่มา comment user ที่เราสนใจ โดยเราได้ตัด Node ที่มีน้ำหนักน้อยออกเพื่อให้แสดงผลได้ไเร็วขึ้น"
+            >
+              <Comment />
+            </Card>
           }
-          </Card>
         </div>
       </div>
     );
